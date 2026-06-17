@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAÉ2.1 — Construire un Réseau</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">~/portfolio-RT</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="sae11.html">SAÉ1.1</a></li>
+    <li><a href="sae103.html">SAÉ1.03</a></li>
+    <li><a href="sae15.html">SAÉ1.5</a></li>
+    <li><a href="sae102.html">SAÉ1.02</a></li>
+    <li><a href="sae21.html" class="active">SAÉ2.1</a></li>
+    <li><a href="sae202.html">SAÉ2.02</a></li>
+    <li><a href="atc.html">SAÉ2.03</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="container">
+    <section>
+      <div class="section-label">SAÉ2.1 — Semestre 2</div>
+      <h1>Construire<br><span style="color:var(--accent)">un Réseau GNS3</span></h1>
+
+      <dl class="tech-sheet" style="margin-top:2rem">
+        <div>
+          <dt>Identifiant</dt>
+          <dd>SAÉ2.1</dd>
+        </div>
+        <div>
+          <dt>Semestre</dt>
+          <dd>S2</dd>
+        </div>
+        <div>
+          <dt>Compétence</dt>
+          <dd><span class="tag tag-rt1">CE1</span></dd>
+        </div>
+        <div>
+          <dt>Outil principal</dt>
+          <dd>GNS3</dd>
+        </div>
+        <div>
+          <dt>Protocoles</dt>
+          <dd>OSPF multi-area · EIGRP · BGP</dd>
+        </div>
+        <div>
+          <dt>Services</dt>
+          <dd>DHCP · DNS · ACL · VPN</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Contexte</div>
+      <div class="prose">
+        <p>
+          La SAÉ2.1 est la continuité directe de la SAÉ1.02, mais à une échelle plus avancée :
+          conception d’une topologie multi-sites, mise en œuvre de protocoles de routage avancés,
+          intégration de services réseau complets et réalisation de tests de résilience.
+        </p>
+        <p>
+          L’infrastructure repose sur plusieurs zones OSPF, une redistribution de routes entre protocoles,
+          ainsi qu’une politique d’accès basée sur des ACL différenciées selon les VLAN et les services.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Architecture déployée</div>
+
+      <div class="code-block">
+        <span class="comment"># Topologie multi-sites — SAÉ2.1 (GNS3)</span><br><br>
+        [SITE_A]──OSPF_area_1──[CORE]──OSPF_area_2──[SITE_B]<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OSPF_area_0 (backbone)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DMZ_SERVEURS]<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DNS · DHCP · HTTP<br><br>
+
+        <span class="comment"># ACL par service</span><br>
+        <span class="key">ip access-list extended</span> <span class="val">RESTRICT_VLAN20</span><br>
+        &nbsp;permit tcp any host <span class="val">192.168.100.10</span> eq <span class="val">80</span><br>
+        &nbsp;deny ip any any log
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Mes tâches personnelles</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">OSPF multi-area</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            J’ai conçu et configuré une architecture OSPF multi-area avec backbone (area 0) et zones régionales.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Redistribution de routes</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            J’ai mis en place la redistribution entre OSPF et routes statiques avec contrôle des métriques.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Services DHCP / DNS</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            J’ai déployé les services DHCP et DNS en DMZ et configuré les pools d’adresses par VLAN.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Tests de résilience</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            J’ai simulé des pannes de liens afin de mesurer et analyser le temps de reconvergence OSPF.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Preuves de compétences</div>
+
+      <div class="proof-block">
+        <h4>AC21.01 — Configurer et dépanner le routage dynamique dans un réseau</h4>
+        <div class="ce">
+          Composante essentielle : concevoir une architecture de routage multi-zones et justifier les choix techniques
+        </div>
+        <p>
+          J’ai construit une architecture OSPF multi-area avec backbone (area 0) et zones régionales,
+          puis configuré la redistribution de routes vers des segments statiques en maîtrisant les métriques,
+          démontrant ma capacité à justifier les choix de routage.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC21.03 — Sécuriser les accès réseau</h4>
+        <div class="ce">
+          Composante essentielle : mettre en œuvre une politique de filtrage différenciée
+        </div>
+        <p>
+          J’ai mis en place des ACL étendues permettant de filtrer les accès aux services selon les VLAN,
+          notamment via des règles comme <code style="color:var(--accent);font-family:monospace">RESTRICT_VLAN20</code>.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC11.03 — Maîtriser la segmentation réseau avancée</h4>
+        <div class="ce">
+          Composante essentielle : valider la résilience d’une architecture réseau par des tests
+        </div>
+        <p>
+          J’ai réalisé des tests de panne de liens et analysé le comportement de reconvergence OSPF,
+          validant la robustesse de l’architecture déployée.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Réflexivité</div>
+      <div class="prose">
+        <p>
+          Cette SAE m’a permis de passer d’une logique de configuration à une logique d’ingénierie :
+          comprendre, justifier et documenter une architecture réseau complète.
+        </p>
+        <p>
+          Les simulations de pannes ont été particulièrement formatrices : elles permettent de comprendre
+          concrètement les mécanismes de convergence et les limites des protocoles de routage.
+          <strong>Un réseau fiable est un réseau dont les défaillances ont été anticipées et testées.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="en-summary">
+        <div class="en-label">English Summary</div>
+        <p>
+          I designed and deployed a multi-site network in GNS3 featuring multi-area OSPF routing,
+          route redistribution, DHCP/DNS services hosted in a DMZ, and extended ACL filtering.
+          I also performed network resilience tests by simulating link failures and analyzing OSPF reconvergence.
+        </p>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="sae102.html">← SAÉ1.02 Réseau Succursale</a>
+      <a href="sae202.html" class="next">SAÉ2.02 — Web Radio →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="prompt">portfolio-BUT-RT</span> &nbsp;·&nbsp; Beaucamp Paul &nbsp;·&nbsp; IUT R&T
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATC Manager — Portfolio BUT R&T</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">~/portfolio-RT</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="sae11.html">SAÉ1.1</a></li>
+    <li><a href="sae103.html">SAÉ1.03</a></li>
+    <li><a href="sae15.html">SAÉ1.5</a></li>
+    <li><a href="sae102.html">SAÉ1.02</a></li>
+    <li><a href="sae21.html">SAÉ2.1</a></li>
+    <li><a href="sae202.html">SAÉ2.02</a></li>
+    <li><a href="atc.html" class="active">SAÉ2.03</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="container">
+    <section>
+      <div class="section-label">SAÉ2.03 — Semestre 2</div>
+      <h1>Gestion<br><span style="color:var(--accent)">Trafic Aérien</span></h1>
+
+      <dl class="tech-sheet" style="margin-top:2rem">
+        <div>
+          <dt>Identifiant</dt>
+          <dd>SAÉ2.03</dd>
+        </div>
+        <div>
+          <dt>Semestre</dt>
+          <dd>S2</dd>
+        </div>
+        <div>
+          <dt>Compétences</dt>
+          <dd><span class="tag tag-rt2">CE2</span></dd>
+        </div>
+        <div>
+          <dt>Technologies</dt>
+          <dd>Django · MySQL · Linux</dd>
+        </div>
+        <div>
+          <dt>Infrastructure</dt>
+          <dd>VM Debian · Nginx · Gunicorn</dd>
+        </div>
+        <div>
+          <dt>Type</dt>
+          <dd>Application web</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Contexte du projet</div>
+      <div class="prose">
+        <p>
+          Dans le cadre de la SAÉ 2.03 du BUT Réseaux & Télécommunications, notre groupe de trois étudiants
+          devait développer une application web permettant de gérer des données liées au trafic aérien.
+          L'application devait permettre la consultation, l'ajout, la modification et la suppression
+          des informations concernant les aéroports, les pistes d'atterrissage, les compagnies aériennes,
+          les avions et les vols.
+        </p>
+
+        <p>
+          Le projet comprenait également la conception et l'installation d'une base de données relationnelle,
+          le développement d'une interface web avec Django ainsi que le déploiement complet de la solution
+          sur une infrastructure Linux mise en place par notre groupe.
+        </p>
+
+        <p>
+          Cette SAÉ m'a permis de mettre en pratique les notions abordées dans les ressources de programmation,
+          bases de données, systèmes d'exploitation, technologies web et travail collaboratif.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Architecture mise en place</div>
+      <div class="prose">
+        <p>
+          L'application a été déployée sur deux machines virtuelles Debian 12 hébergées sous VirtualBox.
+        </p>
+
+        <ul>
+          <li><strong>VM1 (192.168.1.10)</strong> : hébergement de l'application Django avec Gunicorn et Nginx.</li>
+          <li><strong>VM2 (192.168.1.20)</strong> : serveur MariaDB contenant l'ensemble des données du projet.</li>
+        </ul>
+
+        <p>
+          Les deux machines communiquaient via un réseau interne VirtualBox tout en conservant un accès
+          Internet grâce à une interface NAT. Cette architecture nous a permis de séparer les services
+          applicatifs et la base de données comme dans une infrastructure réelle.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Fonctionnalités réalisées</div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">CRUD Aéroports</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Gestion complète des aéroports avec création, consultation, modification et suppression.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">CRUD Pistes</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Gestion des pistes d'atterrissage associées aux aéroports.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Base MariaDB</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Stockage des données relationnelles et gestion des relations entre les entités.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Déploiement Linux</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Hébergement de l'application sur Debian avec Gunicorn et Nginx.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Chargement initial</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Import automatique d'aéroports et de pistes via fixtures JSON.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Travail collaboratif</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Développement en groupe avec GitHub et répartition des tâches.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Mes tâches personnelles</div>
+      <div class="prose">
+        <ul>
+          <li>Création du CRUD complet des aéroports.</li>
+          <li>Création du CRUD complet des pistes d'atterrissage.</li>
+          <li>Développement des vues, formulaires, URLs et templates associés.</li>
+          <li>Validation des données côté serveur avec Django.</li>
+          <li>Création et chargement des fixtures initiales.</li>
+          <li>Installation et configuration de la VM MariaDB.</li>
+          <li>Création de la base de données et gestion des accès distants.</li>
+          <li>Installation et configuration de la VM Django.</li>
+          <li>Mise en place de Gunicorn et Nginx.</li>
+          <li>Configuration réseau entre les deux serveurs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Preuves de compétences</div>
+
+      <div class="proof-block">
+        <h4>AC0311 — Utiliser un système informatique et ses outils</h4>
+        <p>
+          J'ai installé et configuré deux machines virtuelles Debian 12, configuré leur réseau,
+          installé les logiciels nécessaires au projet et assuré leur bon fonctionnement.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC0312 — Lire, exécuter, corriger et modifier un programme</h4>
+        <p>
+          Durant le développement des CRUD, j'ai analysé et corrigé plusieurs erreurs liées aux formulaires,
+          aux modèles et aux vues Django.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC0313 — Traduire un algorithme dans un langage et pour un environnement donné</h4>
+        <p>
+          J'ai implémenté en Python la logique de gestion des aéroports et pistes via Django.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC0314 — Connaître l'architecture et les technologies d'un site Web</h4>
+        <p>
+          Le projet m'a permis de comprendre l'architecture complète d'une application web :
+          navigateur, Nginx, Gunicorn, Django et MariaDB.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC0315 — Choisir les mécanismes de gestion de données adaptés au développement de l'outil</h4>
+        <p>
+          J'ai manipulé les modèles Django, migrations et relations entre tables.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC0316 — S'intégrer dans un environnement collaboratif</h4>
+        <p>
+          Travail en équipe avec GitHub pour la gestion du code et la coordination des tâches.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Analyse réflexive</div>
+      <div class="prose">
+        <p>
+          Cette SAÉ m'a permis de découvrir toutes les étapes d'une application web complète,
+          du développement au déploiement.
+        </p>
+
+        <p>
+          J'ai appris à configurer des serveurs Linux, gérer une base de données distante et organiser une application Django.
+        </p>
+
+        <p>
+          Le travail en équipe m'a également permis d'améliorer ma communication et mon organisation.
+        </p>
+      </div>
+
+      <div class="en-summary">
+        <div class="en-label">English Summary</div>
+        <p>
+          This project involved building a full web application using Django and MySQL,
+          deployed on two Debian virtual machines. I worked mainly on CRUD features,
+          database setup and system deployment using Nginx and Gunicorn.
+        </p>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="sae202.html">← SAÉ2.02 Web Radio</a>
+    </div>
+  </div>
+</main>
+<footer>
+  <span class="prompt">portfolio-BUT-RT</span> &nbsp;·&nbsp; Beaucamp Paul &nbsp;·&nbsp; IUT R&T
+</footer>
+
+</body>
+</html>

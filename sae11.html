@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAÉ1.1 — Hygiène Informatique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">~/portfolio-RT</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="sae11.html" class="active">SAÉ1.1</a></li>
+    <li><a href="sae103.html">SAÉ1.03</a></li>
+    <li><a href="sae15.html">SAÉ1.5</a></li>
+    <li><a href="sae102.html">SAÉ1.02</a></li>
+    <li><a href="sae21.html">SAÉ2.1</a></li>
+    <li><a href="sae202.html">SAÉ2.02</a></li>
+    <li><a href="atc.html">SAÉ2.03</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="container">
+    <section>
+      <div class="section-label">SAÉ1.1 — Semestre 1</div>
+      <h1>Hygiène<br><span style="color:var(--accent)">Informatique</span></h1>
+
+      <dl class="tech-sheet" style="margin-top:2rem">
+        <div>
+          <dt>Identifiant</dt>
+          <dd>SAÉ1.1</dd>
+        </div>
+        <div>
+          <dt>Semestre</dt>
+          <dd>S1</dd>
+        </div>
+        <div>
+          <dt>Compétence</dt>
+          <dd><span class="tag tag-rt1">CE1</span></dd>
+        </div>
+        <div>
+          <dt>Format</dt>
+          <dd>Présentation orale</dd>
+        </div>
+        <div>
+          <dt>Équipe</dt>
+          <dd>Beaucamp Paul</dd>
+        </div>
+        <div>
+          <dt>Livrable</dt>
+          <dd>Diaporama 7 slides</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Contexte</div>
+      <div class="prose">
+        <p>
+          Cette SAÉ avait pour objectif de sensibiliser aux enjeux de la sécurité informatique
+          à travers l’étude d’un vecteur de menace concret, présenté à un public non spécialiste.
+          Notre sujet portait sur <strong>les ransomwares</strong>.
+        </p>
+
+        <p>
+          Un ransomware est un logiciel malveillant qui chiffre les données d’un système afin d’en bloquer
+          l’accès, puis demande une rançon pour les récupérer. Ce type d’attaque représente un risque réel
+          pour les entreprises et les administrations, notamment via des campagnes de phishing.
+        </p>
+
+        <p>
+          L’objectif du travail était de comprendre le fonctionnement global de cette menace, d’en identifier
+          les étapes principales et de proposer des mesures de prévention adaptées.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Mes tâches personnelles</div>
+      <div class="prose">
+        <p>
+          Dans le cadre du travail de groupe, j’ai participé à plusieurs étapes du projet :
+          la recherche documentaire sur les ransomwares, l’analyse des mécanismes de chiffrement utilisés,
+          l’étude d’un cas concret (WannaCry), ainsi que la rédaction de la partie prévention.
+        </p>
+
+        <p>
+          J’ai également réalisé un schéma représentant la chaîne d’infection et participé à la
+          préparation ainsi qu’à la présentation orale devant la classe.
+        </p>
+      </div>
+
+      <div class="code-block">
+        <span class="comment"># Chaîne d'infection simplifiée d'un ransomware</span><br>
+        <span class="key">Phishing (email)</span> → <span class="val">pièce jointe malveillante</span> → <span class="key">exécution</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br>
+        <span class="key">Serveur C2</span> → <span class="val">génération de clés (RSA)</span> → <span class="key">chiffrement des fichiers (AES)</span> → <span class="val">demande de rançon</span>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Preuves de compétences</div>
+
+      <div class="proof-block">
+        <h4>AC11.05 — Identifier les éléments permettant de sécuriser un environnement numérique</h4>
+        <div class="ce">Analyser une menace et ses vecteurs d’attaque</div>
+        <p>
+          J’ai étudié les différentes étapes d’une attaque par ransomware afin d’identifier les points de vulnérabilité
+          d’un système informatique (phishing, exécution de fichiers, absence de contrôle des entrées).
+          J’ai également proposé des mesures de prévention comme les sauvegardes régulières et la sensibilisation des utilisateurs.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC11.03 — Comprendre les menaces sur les systèmes et réseaux informatiques</h4>
+        <div class="ce">Analyser un incident de sécurité réel</div>
+        <p>
+          L’étude du cas WannaCry m’a permis de comprendre comment une vulnérabilité connue (EternalBlue / SMBv1)
+          peut être exploitée à grande échelle. J’ai pu relier une faille technique à ses conséquences concrètes
+          sur les systèmes informatiques.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Réflexivité</div>
+      <div class="prose">
+        <p>
+          Cette SAÉ m’a permis d’apprendre à expliquer des concepts techniques de cybersécurité à un public non spécialiste.
+          Il a fallu simplifier des notions comme le chiffrement asymétrique tout en restant précis dans les explications.
+        </p>
+
+        <p>
+          L’étude du cas WannaCry a montré l’importance des mises à jour de sécurité et de la sensibilisation des utilisateurs.
+          Une vulnérabilité connue peut avoir des conséquences importantes si elle n’est pas corrigée à temps.
+        </p>
+
+        <p>
+          Enfin, cette activité m’a permis de progresser dans la structuration d’une présentation orale et dans le travail en équipe.
+        </p>
+      </div>
+
+      <div class="en-summary">
+        <div class="en-label">English Summary</div>
+        <p>
+          This project focused on ransomware attacks and their functioning, including the infection chain,
+          encryption mechanisms (RSA and AES), and a real-world case study of the WannaCry attack.
+          I contributed to research, prevention analysis, and the oral presentation.
+        </p>
+      </div>
+    </section>
+
+    <a href="sae15.html" class="next">SAÉ1.5 — Traiter des Données →</a>
+  </div>
+</main>
+
+<footer>
+  <span class="prompt">portfolio-BUT-RT</span> &nbsp;·&nbsp; Beaucamp Paul &nbsp;·&nbsp; IUT R&T
+</footer>
+
+</body>
+</html>

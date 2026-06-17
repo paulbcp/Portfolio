@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAÉ1.02 — Réseau Succursale RTC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">~/portfolio-RT</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="sae11.html">SAÉ1.1</a></li>
+    <li><a href="sae103.html">SAÉ1.03</a></li>
+    <li><a href="sae15.html">SAÉ1.5</a></li>
+    <li><a href="sae102.html" class="active">SAÉ1.02</a></li>
+    <li><a href="sae21.html">SAÉ2.1</a></li>
+    <li><a href="sae202.html">SAÉ2.02</a></li>
+    <li><a href="atc.html">SAÉ2.03</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="container">
+    <section>
+      <div class="section-label">SAÉ1.02 — Semestre 1</div>
+      <h1>Réseau<br><span style="color:var(--accent)">Succursale RTC</span></h1>
+
+      <dl class="tech-sheet" style="margin-top:2rem">
+        <div>
+          <dt>Identifiant</dt>
+          <dd>SAÉ1.02</dd>
+        </div>
+        <div>
+          <dt>Semestre</dt>
+          <dd>S1</dd>
+        </div>
+        <div>
+          <dt>Compétence</dt>
+          <dd><span class="tag tag-rt1">CE1</span></dd>
+        </div>
+        <div>
+          <dt>Outil principal</dt>
+          <dd>EVE-NG</dd>
+        </div>
+        <div>
+          <dt>Équipements</dt>
+          <dd>Cisco IOS</dd>
+        </div>
+        <div>
+          <dt>Protocoles</dt>
+          <dd>OSPF · VLAN · NAT · STP</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Contexte</div>
+      <div class="prose">
+        <p>
+          Cette SAÉ consistait à concevoir et configurer l’infrastructure réseau d’une succursale fictive
+          de l’entreprise RTC à l’aide du simulateur EVE-NG.
+        </p>
+
+        <p>
+          L’objectif était de relier cette succursale à un siège via un réseau WAN simulé, tout en assurant
+          la mise en place de services réseau fonctionnels (VLAN, routage dynamique, accès Internet).
+        </p>
+
+        <p>
+          Ce projet marque une première approche concrète de la configuration réseau en ligne de commande Cisco,
+          nécessitant une compréhension rigoureuse des protocoles et de leur interaction.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Configuration clé déployée</div>
+
+      <div class="code-block">
+        <span class="comment">! Extrait configuration routeur — SAÉ1.02</span><br>
+        <span class="comment">! Routage dynamique OSPF</span><br>
+        <span class="key">router ospf</span> <span class="val">1</span><br>
+        &nbsp;network <span class="val">192.168.10.0</span> <span class="val">0.0.0.255</span> area <span class="val">0</span><br>
+        &nbsp;network <span class="val">10.0.0.0</span> <span class="val">0.0.0.3</span> area <span class="val">0</span><br><br>
+
+        <span class="comment">! VLAN segmentation</span><br>
+        <span class="key">vlan</span> <span class="val">10</span><br>
+        &nbsp;name DIRECTION<br>
+        <span class="key">vlan</span> <span class="val">20</span><br>
+        &nbsp;name INFORMATIQUE<br>
+        <span class="key">vlan</span> <span class="val">30</span><br>
+        &nbsp;name SERVEURS<br><br>
+
+        <span class="comment">! NAT overload (PAT)</span><br>
+        <span class="key">ip nat inside source list</span> <span class="val">1</span> interface Fa0/0 overload
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Mes tâches personnelles</div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Topologie EVE-NG</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            J’ai construit la topologie réseau complète sous EVE-NG : routeurs Cisco, switches, hôtes et lien WAN vers le siège.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Segmentation VLAN</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Mise en place des VLANs (Direction, Informatique, Serveurs) et configuration du trunking 802.1Q entre équipements.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Routage OSPF</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Configuration du routage dynamique OSPF et tests de convergence entre la succursale et le siège.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">NAT / PAT</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Mise en place du NAT overload pour permettre l’accès Internet à l’ensemble du réseau local.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Preuves de compétences</div>
+
+      <div class="proof-block">
+        <h4>AC11.03 — Configurer les fonctions de base du réseau local</h4>
+        <div class="ce">Segmentation et interconnexion d’un réseau local</div>
+        <p>
+          J’ai configuré des VLANs et mis en place le trunking 802.1Q afin de segmenter le réseau de la succursale,
+          tout en assurant la communication via un routage inter-VLAN et OSPF.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC21.01 — Configurer et dépanner le routage dynamique</h4>
+        <div class="ce">Analyse et correction de problèmes de routage</div>
+        <p>
+          J’ai configuré OSPF et réalisé des tests de connectivité afin de vérifier la convergence du réseau.
+          J’ai également identifié et corrigé des erreurs de configuration lors des simulations de panne.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC21.02 — Connecter une entreprise à Internet</h4>
+        <div class="ce">Mise en œuvre d’une solution NAT/PAT</div>
+        <p>
+          J’ai configuré le NAT overload afin de permettre à l’ensemble des machines du LAN d’accéder à Internet
+          via une seule adresse IP publique simulée.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Réflexivité</div>
+      <div class="prose">
+        <p>
+          Cette SAÉ m’a permis de développer une méthode de configuration structurée des équipements réseau,
+          en particulier dans un environnement simulé proche d’une infrastructure réelle.
+        </p>
+
+        <p>
+          L’utilisation d’EVE-NG m’a aidé à comprendre l’importance de la précision dans les configurations :
+          une erreur sur une interface ou un masque peut bloquer l’ensemble du routage.
+        </p>
+
+        <p>
+          Enfin, ce projet a renforcé ma compréhension des protocoles fondamentaux (VLAN, OSPF, NAT) et de leur interaction.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="en-summary">
+        <div class="en-label">English Summary</div>
+        <p>
+          This project involved designing and configuring a branch office network using EVE-NG.
+          I implemented VLAN segmentation, OSPF dynamic routing, and NAT/PAT configuration,
+          and performed troubleshooting on simulated network failures to ensure connectivity
+          between the branch and the headquarters.
+        </p>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="sae15.html">← SAÉ1.5 Traiter des Données</a>
+      <a href="sae21.html" class="next">SAÉ2.1 — Construire un Réseau →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="prompt">portfolio-BUT-RT</span> &nbsp;·&nbsp; Beaucamp Paul &nbsp;·&nbsp; IUT R&T
+</footer>
+
+</body>
+</html>

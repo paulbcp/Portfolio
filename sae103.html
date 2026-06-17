@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAÉ1.03 — Découverte d'un dispositif de transmission</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">~/portfolio-RT</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="competences.html">Compétences</a></li>
+    <li><a href="sae11.html">SAÉ1.1</a></li>
+    <li><a href="sae103.html" class="active">SAÉ1.03</a></li>
+    <li><a href="sae15.html">SAÉ1.5</a></li>
+    <li><a href="sae102.html">SAÉ1.02</a></li>
+    <li><a href="sae21.html">SAÉ2.1</a></li>
+    <li><a href="sae202.html">SAÉ2.02</a></li>
+    <li><a href="atc.html">SAÉ2.03</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="container">
+    <section>
+      <div class="section-label">SAÉ1.03 — Semestre 1</div>
+      <h1>Découverte<br><span style="color:var(--accent)">d'un dispositif<br>de transmission</span></h1>
+
+      <dl class="tech-sheet" style="margin-top:2rem">
+        <div>
+          <dt>Identifiant</dt>
+          <dd>SAÉ1.03</dd>
+        </div>
+        <div>
+          <dt>Semestre</dt>
+          <dd>S1</dd>
+        </div>
+        <div>
+          <dt>Compétence</dt>
+          <dd><span class="tag tag-rt1">CE1</span></dd>
+        </div>
+        <div>
+          <dt>Technologies</dt>
+          <dd>WLAN · PoE · RJ45</dd>
+        </div>
+        <div>
+          <dt>Outils</dt>
+          <dd>Ekahau · Fluke · Wireshark</dd>
+        </div>
+        <div>
+          <dt>Livrable</dt>
+          <dd>Rapport + heatmaps</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Contexte</div>
+      <div class="prose">
+        <p>
+          Cette SAÉ consistait à étudier une infrastructure de transmission sans fil déployée dans l’IUT,
+          en combinant mesures terrain et analyse technique.
+        </p>
+
+        <p>
+          L’objectif était de relier les notions théoriques de propagation radio (RSSI, dBm, atténuation,
+          canaux Wi-Fi) à des observations concrètes sur une infrastructure réelle : qualité de couverture,
+          zones d’ombre et impact du positionnement des points d’accès.
+        </p>
+
+        <p>
+          Le travail incluait également l’étude de l’infrastructure filaire supportant le réseau Wi-Fi,
+          notamment le câblage RJ45 et l’alimentation des équipements via PoE.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Mesures et observations</div>
+
+      <div class="code-block">
+        <span class="comment"># Mesures RSSI — zone couloir bâtiment A</span><br><br>
+
+        <span class="key">Position</span>      <span class="val">SSID</span>            <span class="key">Canal</span>  <span class="val">RSSI</span><br>
+        ──────────────────────────────────────────────<br>
+
+        Proche AP (2m)     IUT-Etudiants     6       <span class="val">-42 dBm</span><br>
+        Couloir (15m)      IUT-Etudiants     6       <span class="val">-67 dBm</span><br>
+        Salle éloignée     IUT-Etudiants     6       <span class="val">-79 dBm</span><br>
+        Zone faible        —                 —       <span class="val">-92 dBm</span><br><br>
+
+        <span class="comment"># Seuil de qualité acceptable : environ -80 dBm</span><br>
+        <span class="comment"># Analyse : dégradation progressive du signal liée à la distance et aux obstacles</span>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Infrastructure PoE et câblage</div>
+
+      <div class="code-block">
+        <span class="comment"># Architecture d’alimentation des points d’accès</span><br><br>
+
+        Switch PoE (802.3af/at)<br>
+        &nbsp;&nbsp;↓ câble RJ45 Cat6 (≤ 100 m)<br>
+        Point d’accès Wi-Fi<br><br>
+
+        <span class="key">Consommation mesurée</span> : <span class="val">~12 W</span><br>
+        <span class="key">Standard PoE utilisé</span> : 802.3af suffisant<br><br>
+
+        <span class="comment"># Vérification des câbles</span><br>
+        <span class="comment">- Test de continuité : OK</span><br>
+        <span class="comment">- Norme de câblage : T568B</span><br>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Mes tâches personnelles</div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Mesures Wi-Fi</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Réalisation de mesures RSSI à différents emplacements et analyse de la qualité de couverture.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Analyse radio</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Interprétation des valeurs de signal en lien avec la distance et les obstacles physiques.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Câblage RJ45</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Vérification et test de câbles Ethernet utilisés pour connecter les points d’accès.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom:.5rem">Analyse PoE</h3>
+          <p style="color:var(--muted);font-size:.85rem">
+            Étude de l’alimentation des équipements réseau via PoE et vérification de la conformité des standards.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Preuves de compétences</div>
+
+      <div class="proof-block">
+        <h4>AC12.01 — Mesurer et analyser des signaux</h4>
+        <div class="ce">Analyse de la couverture radio et interprétation des mesures</div>
+        <p>
+          J’ai réalisé des mesures RSSI dans différentes zones du bâtiment et analysé la dégradation du signal
+          en fonction de la distance et des obstacles. Ces observations ont permis d’identifier des zones de faible couverture.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC12.03 — Déployer des supports de transmission</h4>
+        <div class="ce">Installation et validation d’une infrastructure filaire</div>
+        <p>
+          J’ai participé au câblage et au test de liaisons RJ45 Cat6 reliant les points d’accès aux switchs PoE,
+          en vérifiant la continuité et la conformité du câblage.
+        </p>
+      </div>
+
+      <div class="proof-block">
+        <h4>AC12.05 — Communiquer des résultats techniques</h4>
+        <div class="ce">Restitution d’analyses techniques de manière structurée</div>
+        <p>
+          J’ai contribué à la rédaction du rapport en traduisant les mesures techniques (dBm, couverture radio)
+          en interprétations compréhensibles et exploitables pour un lecteur non spécialiste.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="section-label">Réflexivité</div>
+      <div class="prose">
+        <p>
+          Cette SAÉ m’a permis de mieux comprendre les phénomènes physiques liés aux réseaux sans fil,
+          notamment l’impact de la distance et des obstacles sur la qualité du signal.
+        </p>
+
+        <p>
+          Elle m’a également appris que l’infrastructure réseau repose sur une combinaison de couches physiques
+          et logiques : le Wi-Fi dépend directement du câblage et de l’alimentation des équipements.
+        </p>
+
+        <p>
+          Enfin, ce travail a renforcé ma capacité à analyser des mesures techniques et à les traduire en conclusions exploitables.
+        </p>
+      </div>
+
+      <div class="en-summary">
+        <div class="en-label">English Summary</div>
+        <p>
+          This project focused on analyzing a Wi-Fi transmission system deployed in the university building.
+          I performed RSSI measurements, analyzed signal quality, studied Ethernet cabling and PoE power delivery,
+          and contributed to the technical report with interpretation of results and coverage analysis.
+        </p>
+      </div>
+    </section>
+
+    <div class="page-nav">
+      <a href="sae11.html">← SAÉ1.1 Hygiène Informatique</a>
+      <a href="sae15.html" class="next">SAÉ1.5 — Traiter des Données →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span class="prompt">portfolio-BUT-RT</span> &nbsp;·&nbsp; Beaucamp Paul &nbsp;·&nbsp; IUT R&T
+</footer>
+
+</body>
+</html>
